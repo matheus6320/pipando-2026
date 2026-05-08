@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\USUARIO\\\\OneDrive\\\\Documents\\\\SISTEMA DE COTAÇÃO\" -Recurse -Name -ErrorAction SilentlyContinue)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\USUARIO\\\\OneDrive\\\\Documents\\\\SISTEMA DE COTAÇÃO\" -Recurse -File -Name)",
+      "Bash(Select-Object -First 30)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\USUARIO\\\\OneDrive\\\\Documents\\\\SISTEMA DE COTAÇÃO\" -Force)",
+      "Bash(Select-Object Name, PSIsContainer)",
+      "Bash(Format-Table -AutoSize)",
+      "PowerShell([System.IO.File]::ReadAllLines\\(\"c:\\\\Users\\\\USUARIO\\\\OneDrive\\\\Documents\\\\SISTEMA DE COTAÇÃO\\\\index.html\"\\)[0..100] | Join-String -Separator \"`n\")",
+      "PowerShell([System.IO.File]::ReadAllLines\\(\"c:\\\\Users\\\\USUARIO\\\\OneDrive\\\\Documents\\\\SISTEMA DE COTAÇÃO\\\\index.html\"\\)[10..80])",
+      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\USUARIO\\\\OneDrive\\\\Documents\\\\SISTEMA DE COTAÇÃO\\\\js\" | Select-Object Name, @{Name=\"Size\"; Expression={$_.Length}} | Sort-Object Name)",
+      "Bash(powershell -command \"Get-Content 'c:\\\\Users\\\\USUARIO\\\\OneDrive\\\\Documents\\\\SISTEMA DE COTAÇÃO\\\\index.html' | Select-Object -First 25\")",
+      "Bash(powershell -command \"Get-Content 'c:\\\\Users\\\\USUARIO\\\\OneDrive\\\\Documents\\\\SISTEMA DE COTAÇÃO\\\\index.html' | Select-Object -First 20 | Select-Object -Last 10\")",
+      "Bash(n\\\\\"\")",
+      "Bash(powershell -command \"\\(Get-Content 'c:\\\\Users\\\\USUARIO\\\\OneDrive\\\\Documents\\\\SISTEMA DE COTAÇÃO\\\\index.html'\\)[11..17] -join \\\\\"`n\\\\\"\")",
+      "PowerShell($lines = [System.IO.File]::ReadAllLines\\('c:\\\\Users\\\\USUARIO\\\\OneDrive\\\\Documents\\\\SISTEMA DE COTAÇÃO\\\\index.html', [System.Text.Encoding]::UTF8\\); $lines[11..17] -join \"`n\")",
+      "PowerShell($lines = [System.IO.File]::ReadAllLines\\('c:\\\\Users\\\\USUARIO\\\\OneDrive\\\\Documents\\\\SISTEMA DE COTAÇÃO\\\\index.html', [System.Text.Encoding]::UTF8\\); $lines | Where-Object { $_ -match 'btn-refresh|header-sub' } | Select-Object -First 5)"
+    ]
+  }
+}
